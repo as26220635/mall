@@ -1,0 +1,17 @@
+server:
+  port: 7900
+spring:
+  application:
+    name: mall-server-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/sunzhzh_demo/config-demo.git
+          username: sunzhengzhe@hotmail.com
+          password: 123@456
+          search-paths: config-file
+eureka:
+  client:
+    service-url:
+      defaultZone: http://root:123456@localhost:8000/eureka/
