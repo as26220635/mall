@@ -20,6 +20,6 @@ public class UserController {
 
     @GetMapping("/login")
     public String login(String name) {
-        return userFeignClient.login(name);
+        return "结果:" + userFeignClient.login(name);
     }
 }

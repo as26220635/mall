@@ -12,7 +12,7 @@ public class UserService implements UserFeignClient {
 
     @PostMapping("/login")
     @Override
-    public String login(String userName) {
+    public String login(@RequestParam("userName") String userName) {
         return "用户:" + userName;
     }
 }
