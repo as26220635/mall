@@ -4,8 +4,3 @@ eureka:
   client:
     service-url:
       defaultZone: http://root:123456@localhost:8000/eureka/
-zuul:
-  routes:
-    mall-user-consumer:
-      path: /user/**
-      serviceId: mall-user-consumer
