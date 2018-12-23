@@ -7,9 +7,9 @@ spring:
     config:
       server:
         git:
-          uri: https://gitee.com/sunzhzh_demo/config-demo.git
-          username: sunzhengzhe@hotmail.com
-          password: 123@456
+          uri: https://github.com/as26220635/mall.git
+          username: 851758629@qq.com
+          password: qw26220635..
           search-paths: config-file
 eureka:
   client:
