@@ -1,0 +1,12 @@
+server:
+  port: 8015
+spring:
+  application:
+    name: mall-service-user-consumer
+eureka:
+  client:
+    service-url:
+      defaultZone: http://root:123456@localhost:8000/eureka/
+feign:
+  httpclient:
+    enabled: true

@@ -5,7 +5,7 @@ spring:
     config:
       uri: http://localhost:7900
       profile: dev
-      label: springcloud
+      label: master
 # config server 地址
 # application name + profile版本（dev开发，pro生产，test测试）
 # 分支

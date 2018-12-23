@@ -2,4 +2,4 @@ zuul:
   routes:
     mall-user-consumer:
       path: /user/**
-      serviceId: mall-user-consumer
+      serviceId: mall-service-user-consumer
