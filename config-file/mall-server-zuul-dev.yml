@@ -1,4 +1,7 @@
 zuul:
+  host:
+    socket-timeout-millis: 2000
+    connect-timeout-millis: 4000
   routes:
     mall-user-consumer:
       path: /user/**
