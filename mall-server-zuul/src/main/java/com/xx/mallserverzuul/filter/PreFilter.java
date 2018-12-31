@@ -2,6 +2,7 @@ package com.xx.mallserverzuul.filter;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.exception.ZuulException;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +12,9 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class PreFilter extends ZuulFilter {
+
+    @Value("${test}")
+    private String test;
 
     @Override
     public String filterType() {
@@ -29,6 +33,7 @@ public class PreFilter extends ZuulFilter {
 
     @Override
     public Object run() throws ZuulException {
+        System.out.println(test);
         return null;
     }
 }
