@@ -6,16 +6,6 @@ spring:
       uri: http://192.168.75.128:7900
       profile: dev
       label: master
-  zipkin:
-    base-url: http://192.168.75.128:7700
-  sleuth:
-    sampler:
-      probability: 1.0
-  rabbitmq:
-    host: 192.168.75.128
-    port: 15672
-    username: guest
-    password: guest
 # config server 地址
 # application name + profile版本（dev开发，pro生产，test测试）
 # 分支

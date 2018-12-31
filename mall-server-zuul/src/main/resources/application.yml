@@ -1,3 +1,14 @@
+spring:
+  zipkin:
+    base-url: http://192.168.75.128:7700
+  sleuth:
+    sampler:
+      probability: 1.0
+  rabbitmq:
+    host: 192.168.75.128
+    port: 5672
+    username: admin
+    password: 123456
 server:
   port: 8001
 eureka:
