@@ -3,4 +3,4 @@ zuul:
     mall-user-consumer:
       path: /user/**
       serviceId: mall-service-user-consumer
-test: b
+test: c
