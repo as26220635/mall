@@ -16,7 +16,7 @@ public class MallServerEurekaApplication {
     }
 
     /**
-     * 反正eureka客户端注册失败
+     * 防止eureka客户端注册失败
      */
     @EnableWebSecurity
     static class WebSecurityConfig extends WebSecurityConfigurerAdapter {

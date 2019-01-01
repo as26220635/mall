@@ -4,10 +4,24 @@ spring:
   application:
     name: mall-service-user-provider
   zipkin:
-    base-url: http://192.168.75.128:7700
+    #配置zipkin发送类型为kafka
+    sender:
+      type: kafka
+    kafka:
+      topic: zipkin
+  kafka:
+    bootstrap-servers: 192.168.75.128:9092
   sleuth:
     sampler:
       probability: 1.0
+  rabbitmq:
+    host: 192.168.75.128
+    port: 5672
+    username: admin
+    password: 123456
+zipkin:
+  rabbitmq:
+    queue: zipkin
 eureka:
   client:
     service-url:

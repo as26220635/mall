@@ -1,6 +1,14 @@
+server:
+  port: 8001
 spring:
   zipkin:
-    base-url: http://192.168.75.128:7700
+    #配置zipkin发送类型为kafka
+    sender:
+      type: kafka
+    kafka:
+      topic: zipkin
+  kafka:
+    bootstrap-servers: 192.168.75.128:9092
   sleuth:
     sampler:
       probability: 1.0
@@ -9,8 +17,6 @@ spring:
     port: 5672
     username: admin
     password: 123456
-server:
-  port: 8001
 eureka:
   client:
     service-url:
@@ -24,8 +30,8 @@ hystrix:
           enabled: true
         isolation:
           thread:
-            timeoutInMilliseconds: 5000
+            timeoutInMilliseconds: 12000
 #ribbon的超时时间
 ribbon:
-  ReadTimeout: 5000
-  ConnectTimeout: 5000
+  ReadTimeout: 3000
+  ConnectTimeout: 3000
