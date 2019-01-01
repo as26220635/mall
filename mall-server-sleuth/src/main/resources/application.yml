@@ -1,0 +1,36 @@
+server:
+  port: 7700
+spring:
+  application:
+    name: mall-server-sleuth
+  sleuth:
+    enabled: false
+    sampler:
+      percentage: 1.0
+#表示zipkin数据存储方式是elasticsearch
+zipkin:
+  storage:
+    elasticsearch:
+      cluster: elasticsearch
+      max-requests: 64
+      index-replicas: 1
+      hosts: 192.168.75.128:9200
+      index: zipkin
+      index-shards: 5
+    StorageComponent: elasticsearch
+    type: elasticsearch
+  collector:
+    kafka:
+      zookeeper: 192.168.75.128:2181
+      bootstrap-servers: 192.168.75.128:9092
+      topic: zipkin
+#    rabbitmq:
+#      addresses: 192.168.75.128:5672
+#      queue: zipkin
+#      username: admin
+#      password: 123456
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false
