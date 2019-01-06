@@ -7,7 +7,7 @@ spring:
     enabled: false
     sampler:
       percentage: 1.0
-#表示zipkin数据存储方式是elasticsearch
+#琛ㄧずzipkin鏁版嵁瀛樺偍鏂瑰紡鏄痚lasticsearch
 zipkin:
   storage:
     elasticsearch:

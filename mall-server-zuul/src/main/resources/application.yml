@@ -9,6 +9,10 @@ spring:
       topic: zipkin
   kafka:
     bootstrap-servers: 192.168.75.128:9092
+    producer:
+      bootstrap-servers: 192.168.75.128:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
   sleuth:
     sampler:
       probability: 1.0
