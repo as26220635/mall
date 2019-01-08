@@ -10,20 +10,32 @@ spring:
     kafka:
       topic: zipkin
   kafka:
+    bootstrap-servers: ${KAFKA_IP:192.168.75.128:9092}
     producer:
-      bootstrap-servers: 192.168.75.128:9092
+      bootstrap-servers: ${KAFKA_IP:192.168.75.128:9092}
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
   sleuth:
     sampler:
       probability: 1.0
   rabbitmq:
-    host: 192.168.75.128
-    port: 5672
-    username: admin
-    password: 123456
+    host: ${RABBITMQ_HOST:192.168.75.128}
+    port: ${RABBITMQ_PORT:5672}
+    username: "admin"
+    password: "123456"
+  security:
+    user:
+      name: "admin"
+      password: "123456"
 eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+    metadata-map:
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
   client:
+    registryFetchIntervalSeconds: 5
     service-url:
       defaultZone: ${EUREKA_URL:http://admin:123456@192.168.75.128:8000/eureka/}
 
