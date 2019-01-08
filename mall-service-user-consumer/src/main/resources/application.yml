@@ -25,23 +25,49 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://root:123456@192.168.75.128:8000/eureka/
+      defaultZone: ${EUREKA_URL:http://admin:123456@192.168.75.128:8000/eureka/}
+
 feign:
-  httpclient:
-    enabled: true
-  hystrix:
-    enabled: true
+  compression:
+    request:
+      enabled: true
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 2048
+    response:
+      enabled: true
 #hystrix的超时时间
 hystrix:
+  threadpool:
+    default:
+      #并发执行的最大线程数，默认10
+      coreSize: 1000
+      #BlockingQueue的最大队列数
+      maxQueueSize: 1000
+      #即使maxQueueSize没有达到，达到queueSizeRejectionThreshold该值后，请求也会被拒绝
+      queueSizeRejectionThreshold: 500
   command:
     default:
       execution:
-        timeout:
-          enabled: true
         isolation:
           thread:
-            timeoutInMilliseconds: 5000
+            timeoutInMilliseconds: 240000
 #ribbon的超时时间
 ribbon:
-  ReadTimeout: 5000
-  ConnectTimeout: 5000
+  ReadTimeout: 6000
+  ConnectTimeout: 6000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  OkToRetryOnAllOperations: false
+
+#使用log4j2
+logging:
+  config: classpath:log4j2.xml
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

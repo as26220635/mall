@@ -5,7 +5,7 @@ spring:
     name: mall-server-eureka
   security:
     user:
-      name: root
+      name: admin
       password: 123456
 eureka:
   instance:

@@ -19,10 +19,11 @@ public class MallServerEurekaApplication {
      * 防止eureka客户端注册失败
      */
     @EnableWebSecurity
-    static class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+    public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         @Override
         protected void configure(HttpSecurity http) throws Exception {
-            http.csrf().disable();
+            http.csrf().disable();//关闭csrf
+            super.configure(http);
         }
     }
 }

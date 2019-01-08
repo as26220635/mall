@@ -14,15 +14,15 @@ zipkin:
       cluster: elasticsearch
       max-requests: 64
       index-replicas: 1
-      hosts: 192.168.75.128:9200
+      hosts: ${ELASTICSEARCH_IP:192.168.75.128:9200}
       index: zipkin
       index-shards: 5
     StorageComponent: elasticsearch
     type: elasticsearch
   collector:
     kafka:
-      zookeeper: 192.168.75.128:2181
-      bootstrap-servers: 192.168.75.128:9092
+      zookeeper: ${ZOOKEEPER_IP:192.168.75.128:2181}
+      bootstrap-servers: ${KAFKA_IP:192.168.75.128:9092}
       topic: zipkin
 #    rabbitmq:
 #      addresses: 192.168.75.128:5672

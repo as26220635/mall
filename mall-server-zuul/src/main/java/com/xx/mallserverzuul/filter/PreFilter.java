@@ -20,9 +20,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class PreFilter extends ZuulFilter {
 
-    @Autowired
-    private KafkaTemplate<String,String> kafkaTemplate;
-
     @Value("${test}")
     private String test;
 
@@ -43,13 +40,8 @@ public class PreFilter extends ZuulFilter {
 
     @Override
     public Object run() throws ZuulException {
-        log.info("info:" + test);
-        log.error("error:" + test);
-//        log.info(MarkerEnum.KAFKA.getMarker(), "info:" + test);
-//        log.error(MarkerEnum.KAFKA.getMarker(), "error:" + test);
-        for (int i = 0 ;i< 10 ;i++){
-//            kafkaTemplate.send("mall-server-zuul","mall","hello:"+i);
-        }
+        log.info("info:" + test + ",:date:"+System.currentTimeMillis());
+        log.error("error:" + test+ ",:date:"+System.currentTimeMillis());
         return null;
     }
 }
