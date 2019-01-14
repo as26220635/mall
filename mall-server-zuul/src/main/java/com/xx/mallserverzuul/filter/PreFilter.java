@@ -16,12 +16,8 @@ import org.springframework.stereotype.Component;
  */
 
 @Log4j2
-@RefreshScope
 @Component
 public class PreFilter extends ZuulFilter {
-
-    @Value("${test}")
-    private String test;
 
     @Override
     public String filterType() {
@@ -40,8 +36,6 @@ public class PreFilter extends ZuulFilter {
 
     @Override
     public Object run() throws ZuulException {
-        log.info("info:" + test + ",:date:"+System.currentTimeMillis());
-        log.error("error:" + test+ ",:date:"+System.currentTimeMillis());
         return null;
     }
 }

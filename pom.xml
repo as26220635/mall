@@ -20,6 +20,8 @@
         <spring-cloud.version>Greenwich.RC2</spring-cloud.version>
         <lombok.version>1.18.4</lombok.version>
         <disruptor.version>3.4.2</disruptor.version>
+        <!--swagger2-->
+        <swagger-spring.version>1.8.0.RELEASE</swagger-spring.version>
     </properties>
 
     <dependencies>

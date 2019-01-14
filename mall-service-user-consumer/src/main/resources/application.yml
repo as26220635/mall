@@ -71,6 +71,19 @@ ribbon:
   MaxAutoRetriesNextServer: 1
   OkToRetryOnAllOperations: false
 
+#swagger配置
+swagger:
+  title: "会员服务说明文档"
+  description: "接口说明文档"
+  version: "1.0"
+  contact:
+    name: "ygx"
+    url: "851758629@qq.com"
+    email: "851758629@qq.com"
+  base-package: com.xx.mallserviceuserconsumer
+  base-path: "/**"
+  exclude-path: "/ops/**, /error"
+
 #使用log4j2
 logging:
   config: classpath:log4j2.xml

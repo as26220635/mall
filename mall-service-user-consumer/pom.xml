@@ -17,6 +17,14 @@
     </properties>
 
     <dependencies>
+
+        <!--swagger-->
+        <dependency>
+            <groupId>com.spring4all</groupId>
+            <artifactId>swagger-spring-boot-starter</artifactId>
+            <version>${swagger-spring.version}</version>
+        </dependency>
+
         <!-- feign 声明式服务调用框架 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
